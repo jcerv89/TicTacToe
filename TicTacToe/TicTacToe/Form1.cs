@@ -93,7 +93,7 @@ namespace TicTacToe
         private void r1c1button_Click(object sender, EventArgs e)
         {
             //This code is repeated for all buttons on form, only variables with change with for the appropriate button on click count
-            if (click1 == 0&& redToolStripMenuItem.Checked == true)
+            if (click1 == 0 && redToolStripMenuItem.Checked == true)
             {
                 if (turn % 2 != 0)
                 {
@@ -470,5 +470,31 @@ namespace TicTacToe
             blueToolStripMenuItem.Enabled = false;
             redToolStripMenuItem.Enabled = false;
         }
-    }
-}
+
+
+        private void toolStripButtonNewGame_Click(object sender, EventArgs e)
+        {
+            //Resets turn count for new game
+            turn = 1;
+            click1 = 0; click2 = 0; click3 = 0; click4 = 0; click5 = 0; click6 = 0; click7 = 0; click8 = 0; click9 = 0;
+            //Clears buttons of X and O images
+            r1c1button.ImageList = null;
+            r1c2button.ImageList = null;
+            r1c3button.ImageList = null;
+            r2c1button.ImageList = null;
+            r2c2button.ImageList = null;
+            r2c3button.ImageList = null;
+            r3c1button.ImageList = null;
+            r3c2button.ImageList = null;
+            r3c3button.ImageList = null;
+
+            //Resets color view options and re-enables abilty to select red or blue
+            blueToolStripMenuItem.Enabled = true;
+            blueToolStripMenuItem.Checked = true;
+            redToolStripMenuItem.Enabled = true;
+            redToolStripMenuItem.Checked = false;
+
+
+          
+        }
+    } }

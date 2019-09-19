@@ -72,7 +72,7 @@
             this.selectToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(661, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(661, 42);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -144,19 +144,21 @@
             this.xToolStripMenuItem,
             this.oToolStripMenuItem});
             this.selectToolStripMenuItem.Name = "selectToolStripMenuItem";
-            this.selectToolStripMenuItem.Size = new System.Drawing.Size(91, 36);
+            this.selectToolStripMenuItem.Size = new System.Drawing.Size(91, 38);
             this.selectToolStripMenuItem.Text = "Select";
             // 
             // xToolStripMenuItem
             // 
+            this.xToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.xToolStripMenuItem.Name = "xToolStripMenuItem";
-            this.xToolStripMenuItem.Size = new System.Drawing.Size(132, 38);
+            this.xToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
             this.xToolStripMenuItem.Text = "X";
             // 
             // oToolStripMenuItem
             // 
+            this.oToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.oToolStripMenuItem.Name = "oToolStripMenuItem";
-            this.oToolStripMenuItem.Size = new System.Drawing.Size(132, 38);
+            this.oToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
             this.oToolStripMenuItem.Text = "O";
             // 
             // redImages
@@ -268,7 +270,7 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonNewGame});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 40);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 42);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(661, 39);
             this.toolStrip1.TabIndex = 10;
@@ -283,6 +285,7 @@
             this.toolStripButtonNewGame.RightToLeftAutoMirrorImage = true;
             this.toolStripButtonNewGame.Size = new System.Drawing.Size(136, 36);
             this.toolStripButtonNewGame.Text = "New Game";
+            this.toolStripButtonNewGame.Click += new System.EventHandler(this.toolStripButtonNewGame_Click);
             // 
             // label1
             // 
