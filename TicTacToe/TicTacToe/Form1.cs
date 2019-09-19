@@ -78,12 +78,16 @@ namespace TicTacToe
             blueToolStripMenuItem.Checked = false;
         }
 
+
+
         private void blueToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //unchecks red and checks blue
             redToolStripMenuItem.Checked = false;
             blueToolStripMenuItem.Checked = true;
         }
+
+
 
         //For the first button, but any button could be clicked first
         private void r1c1button_Click(object sender, EventArgs e)
@@ -258,6 +262,208 @@ namespace TicTacToe
                     r2c1button.ImageList = blueImages;
                     r2c1button.ImageIndex = 1;
                     click4++;
+                }
+                turn++;
+            }
+            blueToolStripMenuItem.Enabled = false;
+            redToolStripMenuItem.Enabled = false;
+        }
+
+        private void r2c2button_Click(object sender, EventArgs e)
+        {
+
+            if (click5 == 0 && redToolStripMenuItem.Checked == true)
+            {
+                if (turn % 2 != 0)
+                {
+                    r2c2button.ImageList = redImages;
+                    r2c2button.ImageIndex = 0;
+                    click5++;
+                }
+                else
+                {
+                    r2c2button.ImageList = redImages;
+                    r2c2button.ImageIndex = 1;
+                    click5++;
+                }
+                turn++;
+            }
+
+
+            if (click5 == 0 && blueToolStripMenuItem.Checked == true)
+            {
+                if (turn % 2 != 0)
+                {
+                    r2c2button.ImageList = blueImages;
+                    r2c2button.ImageIndex = 0;
+                    click5++;
+                }
+                else
+                {
+                    r2c2button.ImageList = blueImages;
+                    r2c2button.ImageIndex = 1;
+                    click5++;
+                }
+                turn++;
+            }
+            blueToolStripMenuItem.Enabled = false;
+            redToolStripMenuItem.Enabled = false;
+        }
+
+        private void r2c3button_Click(object sender, EventArgs e)
+        {
+
+            if (click6 == 0 && redToolStripMenuItem.Checked == true)
+            {
+                if (turn % 2 != 0)
+                {
+                    r2c3button.ImageList = redImages;
+                    r2c3button.ImageIndex = 0;
+                    click6++;
+                }
+                else
+                {
+                    r2c3button.ImageList = redImages;
+                    r2c3button.ImageIndex = 1;
+                    click6++;
+                }
+                turn++;
+            }
+
+
+            if (click6 == 0 && blueToolStripMenuItem.Checked == true)
+            {
+                if (turn % 2 != 0)
+                {
+                    r2c3button.ImageList = blueImages;
+                    r2c3button.ImageIndex = 0;
+                    click6++;
+                }
+                else
+                {
+                    r2c3button.ImageList = blueImages;
+                    r2c3button.ImageIndex = 1;
+                    click6++;
+                }
+                turn++;
+            }
+            blueToolStripMenuItem.Enabled = false;
+            redToolStripMenuItem.Enabled = false;
+        }
+
+        private void r3c1button_Click(object sender, EventArgs e)
+        {
+            if (click7 == 0 && redToolStripMenuItem.Checked == true)
+            {
+                if (turn % 2 != 0)
+                {
+                    r3c1button.ImageList = redImages;
+                    r3c1button.ImageIndex = 0;
+                    click7++;
+                }
+                else
+                {
+                    r3c1button.ImageList = redImages;
+                    r3c1button.ImageIndex = 1;
+                    click7++;
+                }
+                turn++;
+            }
+
+
+            if (click7 == 0 && blueToolStripMenuItem.Checked == true)
+            {
+                if (turn % 2 != 0)
+                {
+                    r3c1button.ImageList = blueImages;
+                    r3c1button.ImageIndex = 0;
+                    click7++;
+                }
+                else
+                {
+                    r3c1button.ImageList = blueImages;
+                    r3c1button.ImageIndex = 1;
+                    click7++;
+                }
+                turn++;
+            }
+            blueToolStripMenuItem.Enabled = false;
+            redToolStripMenuItem.Enabled = false;
+        }
+
+        private void r3c2button_Click(object sender, EventArgs e)
+        {
+            if (click8 == 0 && redToolStripMenuItem.Checked == true)
+            {
+                if (turn % 2 != 0)
+                {
+                    r3c2button.ImageList = redImages;
+                    r3c2button.ImageIndex = 0;
+                    click8++;
+                }
+                else
+                {
+                    r3c2button.ImageList = redImages;
+                    r3c2button.ImageIndex = 1;
+                    click8++;
+                }
+                turn++;
+            }
+
+
+            if (click8 == 0 && blueToolStripMenuItem.Checked == true)
+            {
+                if (turn % 2 != 0)
+                {
+                    r3c2button.ImageList = blueImages;
+                    r3c2button.ImageIndex = 0;
+                    click8++;
+                }
+                else
+                {
+                    r3c2button.ImageList = blueImages;
+                    r3c2button.ImageIndex = 1;
+                    click8++;
+                }
+                turn++;
+            }
+            blueToolStripMenuItem.Enabled = false;
+            redToolStripMenuItem.Enabled = false;
+        }
+
+        private void r3c3button_Click(object sender, EventArgs e)
+        {
+            if (click9 == 0 && redToolStripMenuItem.Checked == true)
+            {
+                if (turn % 2 != 0)
+                {
+                    r3c3button.ImageList = redImages;
+                    r3c3button.ImageIndex = 0;
+                    click9++;
+                }
+                else
+                {
+                    r3c3button.ImageList = redImages;
+                    r3c3button.ImageIndex = 1;
+                    click9++;
+                }
+                turn++;
+            }
+
+
+            if (click9 == 0 && blueToolStripMenuItem.Checked == true)
+            {
+                if (turn % 2 != 0)
+                {
+                    r3c3button.ImageList = blueImages;
+                    r3c3button.ImageIndex = 0;
+                    click9++;
+                }
+                else
+                {
+                    r3c3button.ImageList = blueImages;
+                    r3c3button.ImageIndex = 1;
+                    click9++;
                 }
                 turn++;
             }
