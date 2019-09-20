@@ -31,15 +31,19 @@ namespace TicTacToe
               should not crash the application if a user tries to load an incorrect 
               file.
         */
-        
+
+       
         public frmTicTacToe()
         {
             InitializeComponent();
             HandleClientWindowSize();
             blueToolStripMenuItem.Checked = true;//Sets a check on blue as default when game is first loaded
             oToolStripMenuItem.Checked = true;
+            //variables to count turns to go back on forth with the x and o
+        
         }
-
+        int turn = 1;
+        int click1 = 0, click2 = 0, click3 = 0, click4 = 0, click5 = 0, click6 = 0, click7 = 0, click8 = 0, click9 = 0;
         //Place this inside the class space in the form you would like to size.
         //Call this method AFTER InitializeComponent() inside the form's constructor.
         void HandleClientWindowSize()
@@ -59,9 +63,7 @@ namespace TicTacToe
             this.Size = new Size(376, 720);
         }
 
-        //variables to count turns to go back on forth with the x and o
-        int turn = 1;
-        int click1 = 0, click2 = 0, click3 = 0, click4 = 0, click5 = 0, click6 = 0, click7 = 0, click8 = 0, click9 = 0;
+       
         
        
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -435,6 +437,7 @@ namespace TicTacToe
                 turn++;
             }
             CheckWinner();
+
             blueToolStripMenuItem.Enabled = false;
             redToolStripMenuItem.Enabled = false;
         }
@@ -476,37 +479,44 @@ namespace TicTacToe
                 turn++;
             }
             CheckWinner();
+            turn = 1;
+            click1 = 0; click2 = 0; click3 = 0; click4 = 0; click5 = 0; click6 = 0; click7 = 0; click8 = 0; click9 = 0;
             blueToolStripMenuItem.Enabled = false;
             redToolStripMenuItem.Enabled = false;
+          
+
         }
 
 
         private void toolStripButtonNewGame_Click(object sender, EventArgs e)
         {
             ClearForm();
+   
+
 
 
         }
 
         public void CheckWinner()
         {
-            
+            //Each statement check for 3 in a row, each directiion and each image index on the button.
            
             if (r1c1button.ImageIndex == 0 && r1c2button.ImageIndex==0&&r1c3button.ImageIndex==0)
             {
 
 
                 MessageBox.Show("O Wins!");
-               
+         
+
 
             }
             else if (r1c1button.ImageIndex == 1 && r1c2button.ImageIndex == 1 && r1c3button.ImageIndex == 1)
             {
                 MessageBox.Show(" X Wins!");
-               
+             
             }
 
-            if (r2c1button.ImageIndex == 0 && r2c2button.ImageIndex == 0 && r2c3button.ImageIndex == 0)
+           else if (r2c1button.ImageIndex == 0 && r2c2button.ImageIndex == 0 && r2c3button.ImageIndex == 0)
             {
                 MessageBox.Show("O Wins!");
                 
@@ -519,7 +529,7 @@ namespace TicTacToe
                 
             }
 
-            if (r3c1button.ImageIndex == 0 && r3c2button.ImageIndex == 0 && r3c3button.ImageIndex == 0)
+            else if (r3c1button.ImageIndex == 0 && r3c2button.ImageIndex == 0 && r3c3button.ImageIndex == 0)
             {
                 MessageBox.Show("O Wins!");
 
@@ -532,7 +542,7 @@ namespace TicTacToe
 
             }
 
-            if (r1c1button.ImageIndex == 0 && r2c1button.ImageIndex == 0 && r3c1button.ImageIndex == 0)
+           else if (r1c1button.ImageIndex == 0 && r2c1button.ImageIndex == 0 && r3c1button.ImageIndex == 0)
             {
                 MessageBox.Show("O Wins!");
 
@@ -551,7 +561,7 @@ namespace TicTacToe
 
             }
 
-            if (r1c2button.ImageIndex == 0 && r2c2button.ImageIndex == 0 && r3c2button.ImageIndex == 0)
+           else if (r1c2button.ImageIndex == 0 && r2c2button.ImageIndex == 0 && r3c2button.ImageIndex == 0)
             {
                 MessageBox.Show("O Wins!");
 
@@ -564,7 +574,7 @@ namespace TicTacToe
 
             }
 
-            if (r1c3button.ImageIndex == 0 && r2c3button.ImageIndex == 0 && r3c3button.ImageIndex == 0)
+           else if (r1c3button.ImageIndex == 0 && r2c3button.ImageIndex == 0 && r3c3button.ImageIndex == 0)
             {
                 MessageBox.Show("O Wins!");
 
@@ -577,7 +587,7 @@ namespace TicTacToe
 
             }
 
-            if (r1c1button.ImageIndex == 0 && r2c2button.ImageIndex == 0 && r3c3button.ImageIndex == 0)
+           else if (r1c1button.ImageIndex == 0 && r2c2button.ImageIndex == 0 && r3c3button.ImageIndex == 0)
             {
                 MessageBox.Show("O Wins!");
 
@@ -590,7 +600,7 @@ namespace TicTacToe
 
             }
 
-            if (r1c3button.ImageIndex == 0 && r2c2button.ImageIndex == 0 && r3c1button.ImageIndex == 0)
+            else  if (r1c3button.ImageIndex == 0 && r2c2button.ImageIndex == 0 && r3c1button.ImageIndex == 0)
             {
                 MessageBox.Show("O Wins!");
 
@@ -602,8 +612,14 @@ namespace TicTacToe
                 MessageBox.Show(" X Wins!");
 
             }
+            else if(turn >9)//Checks for a draw in the game
+            {
+              
+                MessageBox.Show("Draw");
 
+            }
 
+         
         }
 
         private void ClearForm()
@@ -611,6 +627,7 @@ namespace TicTacToe
             //Resets turn count for new game
             turn = 1;
             click1 = 0; click2 = 0; click3 = 0; click4 = 0; click5 = 0; click6 = 0; click7 = 0; click8 = 0; click9 = 0;
+
             //Clears buttons of X and O images
             r1c1button.ImageList = null;
             r1c2button.ImageList = null;
@@ -631,32 +648,32 @@ namespace TicTacToe
             redToolStripMenuItem.Enabled = true;
             redToolStripMenuItem.Checked = false;
 
+            
+
         }
 
         private void saveGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            //SaveFileDialog dlg = new SaveFileDialog();
+            SaveFileDialog dlg = new SaveFileDialog();
 
-            //dlg.DefaultExt = "xml";
-            //if (DialogResult.OK == dlg.ShowDialog())
-            //{
-            //    XmlWriterSettings settings = new XmlWriterSettings();
-            //    settings.ConformanceLevel = ConformanceLevel.Document;
-            //    settings.Indent = true;
+            dlg.DefaultExt = "xml";
+            if (DialogResult.OK == dlg.ShowDialog())
+            {
+                XmlWriterSettings settings = new XmlWriterSettings();
+                settings.ConformanceLevel = ConformanceLevel.Document;
+                settings.Indent = true;
 
-            //    //Writes to xml doc in xml format
-            //    using (XmlWriter writer = XmlWriter.Create(dlg.FileName, settings))
-            //    {
-            //        writer.WriteStartElement("Game");
-            //        writer.WriteElementString(r1c1button.ImageIndex.);
-            //        writer.WriteElementString("Genre", txtGenre.Text.ToString());
-            //        writer.WriteElementString("Rating", numericUpDownRating.Value.ToString());
-            //        writer.WriteElementString("Price", numericUpDownPrice.Value.ToString());
+                //Writes to xml doc in xml format
+                using (XmlWriter writer = XmlWriter.Create(dlg.FileName, settings))
+                {
+                    writer.WriteStartElement("Game");
+                  //  writer.WriteElementString(r1c1button = this.r1c1button);
+                   
 
-            //        writer.WriteEndElement();
-            //    }
-            //}
+                    writer.WriteEndElement();
+                }
+            }
         }
 
     }
